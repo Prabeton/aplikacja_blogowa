@@ -14,7 +14,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <div className="flex flex-col bg-slate-400">
+    <div className="flex flex-wrap justify-center gap-3 bg-transparent ">
       {posts.map(
         ({
           title,

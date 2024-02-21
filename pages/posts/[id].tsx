@@ -19,9 +19,11 @@ const PostPage: NextPage<PostPageProps> = ({ post }) => {
   }
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
+    <div className="w-[700px] border-blue-600 shadow-xl rounded-md p-2 bg-green-200">
+      <h1 className="p-2 font-bold text-blue-400 border-blue-600 rounded-md shadow-xl bg-green-250">
+        {post.title}
+      </h1>
+      <p className="text-sm font-light">{post.content}</p>
     </div>
   );
 };

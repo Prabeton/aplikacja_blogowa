@@ -1,19 +1,20 @@
 import React from "react";
+import Link from "next/link";
 
 const Navbar: React.FC = () => {
   return (
     <nav className="w-full p-4 text-white bg-green-500">
       <div className="container flex items-center justify-between mx-auto">
-        <a href="#" className="text-lg font-bold text-white">
+        <Link href="#" className="text-lg font-bold text-white">
           Kwiatowy Blog
-        </a>
+        </Link>
         <div>
-          <a href="/" className="px-4 text-white hover:text-gray-400">
+          <Link href="/" className="px-4 text-white hover:text-gray-400">
             Home
-          </a>
-          <a href="/about" className="px-4 text-white hover:text-gray-400">
+          </Link>
+          <Link href="/about" className="px-4 text-white hover:text-gray-400">
             About Me
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

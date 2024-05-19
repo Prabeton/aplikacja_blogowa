@@ -10,7 +10,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="flex flex-col items-center justify-between min-h-screen bg-green-300">
       <Navbar />
-      <main>{children}</main>
+      <main>KWIATY</main>
       <Footer />
     </div>
   );

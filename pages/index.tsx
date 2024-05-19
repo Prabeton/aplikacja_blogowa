@@ -6,9 +6,7 @@ const Blog = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(
-        "https://aplikacja-blogowa-7w8x-wkg9-git-main-prabetons-projects.vercel.app/data/posts"
-      );
+      const response = await fetch("/data/posts");
       const result = await response.json();
       setPosts(result);
     };

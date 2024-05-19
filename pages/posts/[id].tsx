@@ -29,8 +29,8 @@ const PostPage: NextPage<PostPageProps> = ({ post }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const apiEndpoint = `https:/aplikacja-blogowa-7w8x-wkg9-git-main-prabetons-projects.vercel.app/api/posts/1`;
-  const res = await fetch(apiEndpoint);
+  const apiEndpoint = `https://data/posts/`;
+  const res = await fetch(`https://data/posts/`);
   const posts: PostProps[] = await res.json();
 
   const paths = posts.map((post) => ({

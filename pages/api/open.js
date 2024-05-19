@@ -5,20 +5,19 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-const perform_AI_completion = async (question) => {
+let previousQuestion = null;
+
+const perform_AI_completion = async (content, role) => {
   try {
+    const messages = [];
+    if (role === "system" && previousQuestion) {
+      messages.push({ role: "user", content: previousQuestion });
+    }
+    messages.push({ role: role, content: content });
+
     const completion = await openai.chat.completions.create({
       model: "gpt-4",
-      messages: [
-        {
-          role: "system",
-          content: "Odpowiedz krótko na zadane pytanie.",
-        },
-        {
-          role: "user",
-          content: question,
-        },
-      ],
+      messages: messages,
       temperature: 1,
       max_tokens: 4000,
       top_p: 1,
@@ -44,9 +43,10 @@ export default async function handler(req, res) {
         return;
       }
 
-      const AI_completion_result = await perform_AI_completion(question);
+      const systemReply = await perform_AI_completion(question, "system");
+      previousQuestion = question;
 
-      res.status(200).json({ reply: AI_completion_result });
+      res.status(200).json({ reply: systemReply });
     } catch (error) {
       res.status(500).json({ error: error.message });
     }

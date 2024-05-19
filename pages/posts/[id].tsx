@@ -29,7 +29,7 @@ const PostPage: NextPage<PostPageProps> = ({ post }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const apiEndpoint = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/hello`;
+  const apiEndpoint = `https://api/hello`;
   const res = await fetch(apiEndpoint);
   const posts: PostProps[] = await res.json();
 

@@ -47,7 +47,7 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async (
   const id = params?.id;
 
   const res = await fetch(
-    `https:/aplikacja-blogowa-7w8x-wkg9-git-main-prabetons-projects.vercel.app/api/posts/${id}`
+    `https:/aplikacja-blogowa-7w8x-wkg9-git-main-prabetons-projects.vercel.app/posts/${id}`
   );
   const post: PostProps = await res.json();
 

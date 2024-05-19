@@ -2,7 +2,7 @@
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: "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",
 });
 
 const perform_AI_completion = async (question) => {

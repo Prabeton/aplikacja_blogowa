@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
     <nav className="w-full p-4 text-white bg-green-500">
       <div className="container flex items-center justify-between mx-auto">
         <Link href="#" className="text-lg font-bold text-white">
-          Kwiatowy Blog
+          Kwiatowy Blog i api
         </Link>
         <div>
           <Link href="/" className="px-4 text-white hover:text-gray-400">

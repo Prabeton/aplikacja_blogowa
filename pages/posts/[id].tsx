@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async (
 ) => {
   const { params } = context;
   const id = params?.id;
-  const res = await fetch(`/data/posts/${id}`);
+  const res = await fetch(`/api/posts/${id}`);
   const post: PostProps = await res.json();
 
   return { props: { post } };
